@@ -2,35 +2,35 @@
 
 class Xt < Formula
   desc "Translate between JSON, MessagePack, TOML, and YAML"
-  version "0.19.2"
+  version "0.19.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ahamlinman/xt/releases/download/v0.19.2/xt-aarch64-apple-darwin.tar.gz"
-      sha256 "7b171e86265bbdde6dc31a4dda3943af1575826620874b2777cdc97ad0c01efa"
+      url "https://github.com/ahamlinman/xt/releases/download/v0.19.3/xt-aarch64-apple-darwin.tar.gz"
+      sha256 "686e7f6d2c348afa0436ef4d33d85d734c5e92f732f8ae9d00c409fefcdeed18"
     end
 
     if Hardware::CPU.intel?
-      url "https://github.com/ahamlinman/xt/releases/download/v0.19.2/xt-x86_64-apple-darwin.tar.gz"
-      sha256 "da0aa342e635ca753017f06ac8b0a348cca540eb71b4e2f55135e8caa24ffcbb"
+      url "https://github.com/ahamlinman/xt/releases/download/v0.19.3/xt-x86_64-apple-darwin.tar.gz"
+      sha256 "838fc96c8ad915f48ee1f48279ae2b617b5cedd9b5af7a5d99ceba009e3e665e"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/ahamlinman/xt/releases/download/v0.19.2/xt-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "700b50fc570ee7aaae1d30f5389cd8e0ed4a52537af3a6fcadab645bc561c12c"
+      url "https://github.com/ahamlinman/xt/releases/download/v0.19.3/xt-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "5b85b4da3953cb8c21dba70438879538f98ccdb056f3b2c12b536d64342a9def"
     end
 
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ahamlinman/xt/releases/download/v0.19.2/xt-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "d0d3faa9b3ea958008a6e7aafda14398295a05fa38342eef21d8f7600ebdbd4d"
+      url "https://github.com/ahamlinman/xt/releases/download/v0.19.3/xt-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "a054aac47e6bde10259b55ebb21c2fa4ad25b5467a7e8bef6459a1290eda7cc8"
     end
 
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ahamlinman/xt/releases/download/v0.19.2/xt-armv7-unknown-linux-musleabihf.tar.gz"
-      sha256 "874513bc6189c233a4ae81f9bc44cb1636d230a6fafc2d823c93fd13c757710a"
+      url "https://github.com/ahamlinman/xt/releases/download/v0.19.3/xt-armv7-unknown-linux-musleabihf.tar.gz"
+      sha256 "b7c4a221cf63f261210bb42b1140b7ba912da2a6d9b816815db41a74f218a6ef"
     end
   end
 
