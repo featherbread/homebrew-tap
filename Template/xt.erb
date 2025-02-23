@@ -1,0 +1,44 @@
+<% @version = "v0.19.3" -%>
+<% @sums = load_sha256sums "https://github.com/ahamlinman/xt/releases/download/#{@version}/SHA256SUMS" -%>
+# frozen_string_literal: true
+
+class Xt < Formula
+  desc "Translate between JSON, MessagePack, TOML, and YAML"
+  version "<%= @version.delete_prefix "v" %>"
+  license "MIT"
+
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/ahamlinman/xt/releases/download/<%= @version %>/xt-aarch64-apple-darwin.tar.gz"
+      sha256 "<%= @sums['xt-aarch64-apple-darwin.tar.gz'] %>"
+    end
+
+    if Hardware::CPU.intel?
+      url "https://github.com/ahamlinman/xt/releases/download/<%= @version %>/xt-x86_64-apple-darwin.tar.gz"
+      sha256 "<%= @sums['xt-x86_64-apple-darwin.tar.gz'] %>"
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/ahamlinman/xt/releases/download/<%= @version %>/xt-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "<%= @sums['xt-x86_64-unknown-linux-musl.tar.gz'] %>"
+    end
+
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ahamlinman/xt/releases/download/<%= @version %>/xt-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "<%= @sums['xt-aarch64-unknown-linux-musl.tar.gz'] %>"
+    end
+
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/ahamlinman/xt/releases/download/<%= @version %>/xt-armv7-unknown-linux-musleabihf.tar.gz"
+      sha256 "<%= @sums['xt-armv7-unknown-linux-musleabihf.tar.gz'] %>"
+    end
+  end
+
+  def install
+    bin.install "xt"
+    man1.install "xt.1"
+    doc.install "LICENSES.html"
+  end
+end
