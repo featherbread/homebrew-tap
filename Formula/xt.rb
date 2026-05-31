@@ -2,35 +2,35 @@
 
 class Xt < Formula
   desc "Translate between JSON, MessagePack, TOML, and YAML"
-  version "0.20.0"
+  version "0.21.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/featherbread/xt/releases/download/v0.20.0/xt-aarch64-apple-darwin.tar.gz"
-      sha256 "fa5de0eeeb09809e10d68d6273e2696d2047efb717975b7edce5c14a8166bac2"
+      url "https://github.com/featherbread/xt/releases/download/v0.21.0/xt-aarch64-apple-darwin.tar.gz"
+      sha256 "23596dfbc2fdbc93f35ed7f2a9dd4ab0e77d46baa430af7f6f68e4ec8f9e99c3"
     end
 
     if Hardware::CPU.intel?
-      url "https://github.com/featherbread/xt/releases/download/v0.20.0/xt-x86_64-apple-darwin.tar.gz"
-      sha256 "7346f929b10196bb50ce992d9dda7b103ea0f526c3b22e9e00da335de417d386"
+      url "https://github.com/featherbread/xt/releases/download/v0.21.0/xt-x86_64-apple-darwin.tar.gz"
+      sha256 "473e03048db4b14c53b2a217c29a39aa6a9a42feb09e2fef3acb26774b50adde"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/featherbread/xt/releases/download/v0.20.0/xt-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "0bb8b61869acbbc9d816062b6901f088c99fccfc12d3fc2a37ad405a825dc845"
+      url "https://github.com/featherbread/xt/releases/download/v0.21.0/xt-x86_64-unknown-linux-musl.tar.gz"
+      sha256 "ffb8476112a1e1321f7a9f1e2bdf24d518cae15d2d9bd01ad66f30eadb056829"
     end
 
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/featherbread/xt/releases/download/v0.20.0/xt-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "c662e3de6352f9042c6e434aea78cd3b16cbd18283504a46ffda0ab019ec0960"
+      url "https://github.com/featherbread/xt/releases/download/v0.21.0/xt-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "eea4ac7c8858452fb5aae92e5fdd4e7298d36c64c7ee495048b0b290b3d6465f"
     end
 
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/featherbread/xt/releases/download/v0.20.0/xt-armv7-unknown-linux-musleabihf.tar.gz"
-      sha256 "a66115efd09eac21d4740602bcff31bb2b5a33d3c100f5d905d0986922628f14"
+      url "https://github.com/featherbread/xt/releases/download/v0.21.0/xt-armv7-unknown-linux-musleabihf.tar.gz"
+      sha256 "572c6138d1dc60f9a931aca0c308c6d1d35eea22f4286231f985e65fabc7831e"
     end
   end
 
